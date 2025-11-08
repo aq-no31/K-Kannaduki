@@ -1,0 +1,26 @@
+{
+  "name": "k-kannaduki",
+  "version": "1.0.0",
+  "description": "もういい、これ以上いじるんじゃない",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aq-no31/K-Kannaduki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aq-no31/K-Kannaduki/issues"
+  },
+  "homepage": "https://github.com/aq-no31/K-Kannaduki#readme",
+  "dependencies": {
+    "discord.js": "^14.24.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}

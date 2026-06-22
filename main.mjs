@@ -32,9 +32,21 @@ client.on('messageCreate', (message) => {
     // 「ping」メッセージに反応
     if (message.content.toLowerCase() === 'ping') {
         message.reply('🏓 pong!');
-        console.log(`📝 ${message.author.tag} が ping コマンドを使用`);
     }
 
+    if (message.content.toLowerCase() === '褒めて') {
+     let homekotoba = ["今日もがんばっててえらい！","すごいよ！本当によく頑張ってるねえ！","たいへんよくがんばりました！花丸だよ！","君が今まで頑張ったことが、全部反映されてるね！すごいや！","ナイス〜！ハイタッチしようよ🙌"]
+     let homeru = 
+        message.reply(homeru);
+        console.log(`📝 ${message.author.tag} が ほめて コマンドを使用`);
+    }
+   if (message.content.toLowerCase() === '慰めて') {
+     let homekotoba = ["大丈夫、今日という日は無駄にならないよ。でも、しんどかったねえ","よしよし、大丈夫だよ。君が頑張っているの、俺がちゃんと知っているからさ","落ち込んでいる時はとことん落ち込んじゃおう！しんどい気持ちは君の大切な感情だからさ、そっとその気持ちを撫でてあげようね"]
+     let nagusame = 
+        message.reply(nagusame);
+        console.log(`📝 ${message.author.tag} が なぐさめて コマンドを使用`);
+    }
+ // リアクションで反応してくれる
     if (message.content.includes('のどかわいた')) {
     let drink = ["🍵","🧃","🥤","🧋","🍹","🥛"]
     let bar = drink[Math.floor(Math.random() * drink.length)];

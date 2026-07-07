@@ -33,6 +33,12 @@ client.on('messageCreate', (message) => {
     if (message.content.toLowerCase() === 'ping') {
         message.reply('🏓 pong!');
     }
+  if  (message.isMemberMentioned(client.user) && message.content.match(/おみくじして/))){
+    let arr = ["今日はいい日になりそうだよ", "スヴァルが腕にアンパンマン描いてくれるかも！", "スバルくんがおすすめのお菓子屋さん紹介してくれるかも！", "気が向かなくて下を向いてたら、思いがけない発見があるかもよ", "君の好きなものが特売しているかも！", "道端でねこちゃん見かけるかも！"];
+    lottery(message.channel.id, arr);
+  }else if (message.isMemberMentioned(client.user)) {
+    sendReply(message, "呼んだ？");
+  }
 
     if (message.content.toLowerCase() === '褒めて') {
      let homekotoba = ["今日もがんばっててえらい！","すごいよ！本当によく頑張ってるねえ！","たいへんよくがんばりました！花丸だよ！","君が今まで頑張ったことが、全部反映されてるね！すごいや！","ナイス〜！ハイタッチしようよ🙌"]
@@ -85,6 +91,13 @@ client.on('messageCreate', (message) => {
     }
 }
  );
+
+// リプライきたらの反応
+
+function lottery(channelId, arr){
+  let random = Math.floor( Math.random() * arr.length);
+  sendMsg(channelId, arr[random]);
+}
 
 // エラーハンドリング
 client.on('error', (error) => {

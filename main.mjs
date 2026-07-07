@@ -39,6 +39,10 @@ client.on('messageCreate', (message) => {
   }else if (message.isMemberMentioned(client.user)) {
     sendReply(message, "呼んだ？");
   }
+function lottery(channelId, arr){
+  let random = Math.floor( Math.random() * arr.length);
+  sendMsg(channelId, arr[random]);
+}
 
     if (message.content.toLowerCase() === '褒めて') {
      let homekotoba = ["今日もがんばっててえらい！","すごいよ！本当によく頑張ってるねえ！","たいへんよくがんばりました！花丸だよ！","君が今まで頑張ったことが、全部反映されてるね！すごいや！","ナイス〜！ハイタッチしようよ🙌"]

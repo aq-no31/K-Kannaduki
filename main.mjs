@@ -32,18 +32,8 @@ client.on('messageCreate', (message) => {
     // 「ping」メッセージに反応
     if (message.content.toLowerCase() === 'ping') {
         message.reply('🏓 pong!');
-    }
-  if  (message.isMemberMentioned(client.user) && message.content.match(/おみくじして/){
-    let arr = ["今日はいい日になりそうだよ", "スヴァルが腕にアンパンマン描いてくれるかも！", "スバルくんがおすすめのお菓子屋さん紹介してくれるかも！", "気が向かなくて下を向いてたら、思いがけない発見があるかもよ", "君の好きなものが特売しているかも！", "道端でねこちゃん見かけるかも！"];
-    lottery(message.channel.id, arr);
-  }else if (message.isMemberMentioned(client.user)) {
-    sendReply(message, "呼んだ？");
-  }
-function lottery(channelId, arr){
-  let random = Math.floor( Math.random() * arr.length);
-  sendMsg(channelId, arr[random]);
-}
-
+    }
+// 完全一致メッセージ　toLowerCaseで記述
     if (message.content.toLowerCase() === '褒めて') {
      let homekotoba = ["今日もがんばっててえらい！","すごいよ！本当によく頑張ってるねえ！","たいへんよくがんばりました！花丸だよ！","君が今まで頑張ったことが、全部反映されてるね！すごいや！","ナイス〜！ハイタッチしようよ🙌"]
      let homeru = homekotoba[Math.floor(Math.random() * homekotoba.length)];
@@ -56,52 +46,65 @@ function lottery(channelId, arr){
         message.reply(koekake);
         console.log(`📝 ${message.author.tag} が なぐさめて コマンドを使用`);
     }
- // リアクションで反応してくれる
-    if (message.content.includes('のどかわいた')) {
-    let drink = ["🍵","🧃","🥤","🧋","🍹","🥛"]
-    let bar = drink[Math.floor(Math.random() * drink.length)];
-        message.react(bar);
+    if (message.content.toLowerCase() === '神無月くんおみくじ！') {
+     let arr = ["今日はいい日になりそうだよ", "スヴァルが腕にアンパンマン描いてくれるかも！", "スバルくんがおすすめのお菓子屋さん紹介してくれるかも！", "気が向かなくて下を向いてたら、思いがけない発見があるかもよ", "君の好きなものが特売しているかも！", "道端でねこちゃん見かけるかも！"];
+     let arra = arr[Math.floor(Math.random() * arr.length)];
+        message.reply(arra);
+        console.log(`📝 ${message.author.tag} が おみくじ コマンドを使用`);
 
-     
-}
-      if (message.content.includes('おやつたべたい')) {
-    let snack = ["🥨","🥞","🍡","🍧","🍨","🍭","🍫","🍩","🍪"]
-    let pick = snack[Math.floor(Math.random() * snack.length)];
-        message.react(pick);
-      }
-  if (message.content.includes('ごほうびほしい')) {
-        message.react("🍬");message.react("💯");message.react("💮");message.react("🎖️");
+    if (message.content.toLowerCase() === '具合悪い') {
+        message.reply("大丈夫？無理はしないで、少し布団で休んでおいで。\n悪くなるようなら病院に行くんだよ。");  
     }
-    if (message.content.includes('みてみて')) {
-        message.react("👀");message.react("💭");message.react("‼️");message.react("👏");message.react("👍");
-    }
-     if (message.content.includes('具合悪い')) {
-        message.reply("大丈夫？無理はしないで、少し布団で休んでおいで。\n悪くなるようなら病院に行くんだよ。");
 
-  }
-        if (message.content.includes('神無月くーん')) {
+
+
+// 内容一致メッセージ includesで記述
+    if (message.content.includes('神無月くーん')) {
         message.reply("はいはーい、神無月だよ。どうしたのかな？");
-        }
-         if (message.content.includes('おなかすいた')) {
+}
+
+
+// 完全一致リアクション toLowerCaseで記述     
+    if (message.content.toLowerCase() === 'つらい') {
+        message.react("🫂");
+    }
+    if (message.content.toLowerCase() === 'しんどい') {
+        message.react("🫂");
+    }
+ 
+ // 内容一致リアクション
+     
+   if (message.content.includes('おなかすいた')) {
     let food = ["🍙","🍜","🍛","🍕","🍣"]
     let demae = food[Math.floor(Math.random() * food.length)];
         message.react(demae);
-         }
-          if (message.content.includes('つらい')) {
-        message.react("🫂");
-    }
-      if (message.content.includes('しんどい')) {
-        message.react("🫂");
-    }
+}
+     
+    if (message.content.includes('のどかわいた')) {
+    let drink = ["🍵","🧃","🥤","🧋","🍹","🥛"]
+    let bar = drink[Math.floor(Math.random() * drink.length)];
+        message.react(bar);     
+}
+     
+    if (message.content.includes('おやつたべたい')) {
+    let snack = ["🥨","🥞","🍡","🍧","🍨","🍭","🍫","🍩","🍪"]
+    let pick = snack[Math.floor(Math.random() * snack.length)];
+        message.react(pick);
+}
+     
+    if (message.content.includes('ごほうびほしい')) {
+        message.react("🍬");message.react("💯");message.react("💮");message.react("🎖️");
+}
+    if (message.content.includes('みてみて')) {
+        message.react("👀");message.react("💭");message.react("‼️");message.react("👏");message.react("👍");
+}
+
+     
+ 
+
 }
  );
 
-// リプライきたらの反応
-
-function lottery(channelId, arr){
-  let random = Math.floor( Math.random() * arr.length);
-  sendMsg(channelId, arr[random]);
-}
 
 // エラーハンドリング
 client.on('error', (error) => {

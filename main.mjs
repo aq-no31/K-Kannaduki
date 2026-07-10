@@ -33,7 +33,7 @@ client.on('messageCreate', (message) => {
     if (message.content.toLowerCase() === 'ping') {
         message.reply('🏓 pong!');
     }
-  if  (message.isMemberMentioned(client.user) && message.content.match(/おみくじして/))){
+  if  (message.isMemberMentioned(client.user) && message.content.match(/おみくじして/){
     let arr = ["今日はいい日になりそうだよ", "スヴァルが腕にアンパンマン描いてくれるかも！", "スバルくんがおすすめのお菓子屋さん紹介してくれるかも！", "気が向かなくて下を向いてたら、思いがけない発見があるかもよ", "君の好きなものが特売しているかも！", "道端でねこちゃん見かけるかも！"];
     lottery(message.channel.id, arr);
   }else if (message.isMemberMentioned(client.user)) {

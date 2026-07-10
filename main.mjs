@@ -51,8 +51,9 @@ client.on('messageCreate', (message) => {
      let arra = arr[Math.floor(Math.random() * arr.length)];
         message.reply(arra);
         console.log(`📝 ${message.author.tag} が おみくじ コマンドを使用`);
+    }
 
-    if (message.content.toLowerCase() === '具合悪い') {
+   if (message.content.toLowerCase() === '具合悪い') {
         message.reply("大丈夫？無理はしないで、少し布団で休んでおいで。\n悪くなるようなら病院に行くんだよ。");  
     }
 
